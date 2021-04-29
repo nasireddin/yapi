@@ -50,8 +50,7 @@ YApi 是<strong>高效</strong>、<strong>易用</strong>、<strong>功能强大
     pm2 restart yapi //重启服务
 
 ### 赞赏
-![avatar](encourage.jpg)
-
+ <img width="200" width="200" src="https://img.wenhairu.com/images/2021/04/29/a0Zh6.jpg">
 
 ### License
 Apache License 2.0
