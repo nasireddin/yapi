@@ -25,6 +25,11 @@ const handleReq_body_form = (body) => {
     return res
   }
 
+  //raw 不做表单处理
+  if (body.mode == 'raw') {
+    return res
+  }
+
   const bodyForm = body[body.mode]
 
   for (let i in bodyForm) {

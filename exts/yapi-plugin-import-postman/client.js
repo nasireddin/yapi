@@ -120,6 +120,7 @@ function postman(importDataModule) {
   }
 
   function importPostman(data, key) {
+    console.log('data1', data)
     let reflect = {
       //数据字段映射关系
       title: 'name',
@@ -219,6 +220,7 @@ function postman(importDataModule) {
       console.log(err.message);
       message.error(`${err.message}, 导入的postman格式有误`);
     }
+    console.log('res1', res)
     return res;
   }
 

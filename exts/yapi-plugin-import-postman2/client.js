@@ -3,7 +3,7 @@ import _ from 'underscore'
 import { handleReq_headers } from './lib/header'
 import { handleDescription } from './lib/description'
 import { handleRequestUrl } from './lib/path'
-import { handleResponses } from './lib/response'
+import { handleResponses,transformJsonToSchema } from './lib/response'
 import { handleReqBodyType, handleReq_body_form, isContentTypeJson } from './lib/body'
 import { handleReqParams, handleReq_query } from './lib/param'
 
@@ -96,9 +96,14 @@ const importPostman = (data) => {
 
     res.req_body_is_json_schema = isContentTypeJson(header)
 
+    //raw 加多参数req_body_other处理
+    if (body.mode == 'raw'){
+      res.req_body_other = transformJsonToSchema(body.raw)
+    }
+
     // response
     res = Object.assign({}, res, handleResponses(response))
-
+    console.log('res', res)
     return res
   } catch (err) {
     message.error(`${err.message}, 导入的postman格式有误`)
