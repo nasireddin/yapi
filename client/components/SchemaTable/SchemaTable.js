@@ -29,7 +29,7 @@ const columns = [
     title: '名称',
     dataIndex: 'name',
     key: 'name',
-    width: 200
+    width: 300
   },
   {
     title: '类型',
